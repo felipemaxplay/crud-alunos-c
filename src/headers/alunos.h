@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct nodo {
 
@@ -49,4 +50,22 @@ listAlunos* findAlunoByRa(listAlunos *point, int ra) {
     }
 
     return NULL;
+}
+
+void printAllAlunoRightAndLeft(listAlunos * point) {
+
+    listAlunos * pre;
+    printf("From left to right: ");
+    while(point != NULL) {
+
+        printf("\nRA: %d\nName: %s\n", point -> ra, point -> name);
+        pre = point;
+        point = point -> next;
+    }
+
+    printf("From right to left: ");
+    while(pre != NULL) {
+        printf("\nRA: %d\nName: %s\n", pre -> ra, pre -> name);
+        pre = pre -> pre;
+    }
 }
