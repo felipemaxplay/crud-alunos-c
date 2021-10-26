@@ -35,3 +35,18 @@ void insertAluno(listAlunos *point, char namePers[40], int raPers) {
         point -> next = aux;
     }   
 }
+
+listAlunos* findAlunoByRa(listAlunos *point, int ra) {
+
+    while (point != NULL) {
+        
+        if(ra == point ->ra) {
+            
+            return point;
+        } else {
+            point -> next;
+        }
+    }
+
+    return NULL;
+}
