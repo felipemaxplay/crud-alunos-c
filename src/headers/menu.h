@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 void menuDisplay() {
-    printf("\n\n");
+    
+    system("clear");
     printf("Menu Prinpical\n");
     printf("--------------\n");
     printf("[1] - Cadastrar Aluno\n");

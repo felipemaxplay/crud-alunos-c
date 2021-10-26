@@ -37,7 +37,7 @@ void insertAluno(listAlunos *point, char namePers[40], int raPers) {
     }   
 }
 
-listAlunos * findAlunoByRa(listAlunos *point, int ra) {
+listAlunos * findAlunoByRa(listAlunos * point, int ra) {
 
     while (point != NULL) {
         
@@ -45,7 +45,7 @@ listAlunos * findAlunoByRa(listAlunos *point, int ra) {
             
             return point;
         } else {
-            point -> next;
+            point = point -> next;
         }
     }
 
@@ -57,7 +57,7 @@ void printAllAluno(listAlunos * point) {
     listAlunos * pre;
     while(point != NULL) {
 
-        printf("\nRA: %d\nName: %s\n", point -> ra, point -> name);
+        printf("RA: %d\nName: %s\n\n", point -> ra, point -> name);
         pre = point;
         point = point -> next;
     }

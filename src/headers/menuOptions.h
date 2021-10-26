@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include "./alunosService.h"
 
 void menuOptions(int op) {
     switch (op) {
     case 1:
-        printf("Cadastro completo\n");
+        newAluno();
         break;
     case 2:
-        printf("RA: 21 - Matheus\n");
+        findByRa();
         break;
     case 3:
-        printf("1 - Jean\n2 - Maicon\n3 - Jean\n");
+        allAlunos();
         break;
     case 4:
         printf("1 - Fernanda\n");

@@ -12,6 +12,7 @@ void appMain() {
         menuDisplay();
         printf("Escolha a operação: ");
         scanf("%d", &options);
+        while ((getchar()) != '\n');
         printf("\n");
         menuOptions(options);
     } while (options != 0);
