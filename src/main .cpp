@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "./headers/menu.h"
+#include "./headers/menuOptions.h"
 
 void appMain() {
 
