@@ -63,3 +63,35 @@ void printAllAluno(listAlunos * point) {
     }
 }
 
+int removeByRa(listAlunos * point, int ra) {
+
+    listAlunos * aux;
+    if(point == NULL) {
+
+        return 0;
+    } else if( ra == point -> ra) {
+        
+        aux = point;
+        init = point -> next;
+        init -> pre = NULL;
+        free(aux);
+        return 1;
+    } else {
+
+        while(point -> next != NULL) {
+            if(ra == point -> next -> ra) {
+                aux = point -> next;
+                point -> next = aux -> next;
+                if(aux -> next != NULL) {
+                    aux -> next -> pre = aux -> pre;
+                }
+                free(aux);
+                return 1;
+            } else {
+                point = point -> next;
+            }
+        }
+    }
+
+    return 0;
+}
