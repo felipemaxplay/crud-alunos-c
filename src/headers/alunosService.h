@@ -58,3 +58,29 @@ void allAlunos() {
     printAllAluno(init);
     anyButtonToContinue();
 }
+
+void deleteByRa() {
+
+    int ra;
+
+    system("clear");
+    printf("Remover Aluno por RA\n");
+    printf("--------------------\n");
+    printf("Qual o RA do aluno que deseja remover\n");
+    printf("RA: ");
+    scanf("%d", &ra);
+    clearBuffer();
+    removeByRa(init, ra);
+    printf("\nAluno Removido com Sucesso\n");
+    anyButtonToContinue();
+}
+
+void deleteAllAlunos() {
+
+    system("clear");
+    printf("Deletar Lista de Alunos\n");
+    printf("-----------------------\n");
+    removeAllAlunos(init);
+    printf("Lista deletada com sucesso\n");
+    anyButtonToContinue();
+}

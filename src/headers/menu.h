@@ -10,7 +10,7 @@ void menuDisplay() {
     printf("[3] - Listar Todos\n");
     printf("[4] - Consultar por Nome\n");
     printf("[5] - Exlcuir por RA\n");
-    printf("[6] - Excluir Todos\n");
+    printf("[6] - Excluir Todos os Alunos\n");
     printf("[7] - Exibir Maior e Menor Nome\n");
     printf("[0] - Sair\n");
 }

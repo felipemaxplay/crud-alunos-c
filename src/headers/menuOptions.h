@@ -16,10 +16,10 @@ void menuOptions(int op) {
         printf("1 - Fernanda\n");
         break;
     case 5:
-        printf("Aluno Deletado\n");
+        deleteByRa();
         break;
     case 6:
-        printf("Lista deletada\n");
+        deleteAllAlunos();
         break;
     case 7:
         printf("1 - Ana\n2 - Maicon\n");
