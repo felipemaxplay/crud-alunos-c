@@ -95,3 +95,13 @@ int removeByRa(listAlunos * point, int ra) {
 
     return 0;
 }
+
+void removeAllAlunos(listAlunos * point) {
+
+    while (point != NULL) {
+
+        init = point -> next;
+        free(point);
+        point = init;
+    }
+}
