@@ -1,27 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "./alunos.h"
-
-void clearBuffer() {
-
-    while ((getchar()) != '\n');
-}
-
-void anyButtonToContinue() {
-
-    printf("\nAperte qualquer tecla para continuar...\n");
-    clearBuffer();
-    getchar();    
-}
+#include "./menuOptionsMisc.h"
 
 void newAluno() {
 
     char name[40];
     int ra;
 
-    system("clear");
-    printf("Cadastrando Aluno\n");
-    printf("-----------------\n");
+    titleName({"Cadastrando Aluno"});
     printf("Nome: ");
     scanf("%[^\n]s", name);
     clearBuffer();
@@ -35,26 +22,39 @@ void newAluno() {
 void findByRa() {
 
     int ra;
+    listAlunos * aluno;
 
-    system("clear");
-    printf("Procurar Aluno por RA\n");
-    printf("---------------------\n");
+    titleName("Procurar Aluno por RA");
     printf("Digite o RA que deseja procurar\n");
     printf("RA: ");
     scanf("%d", &ra);
     clearBuffer();
     printf("\nAluno Encontrado\n");
     printf("-----------------\n");
-    printf("RA: %d\n", findAlunoByRa(init, ra) -> ra);
-    printf("Nome: %s\n", findAlunoByRa(init, ra) -> name);
+    aluno = findAlunoByRa(init, ra);
+    printf("RA: %d\n", aluno -> ra);
+    printf("Nome: %s\n", aluno -> name);
+    anyButtonToContinue();
+}
+
+void findByName() {
+
+    char name[40];
+
+    titleName("Procurar Aluno por Nome\n");
+    printf("Digite o nome que deseja procurar\n");
+    printf("Nome: ");
+    scanf("%[^\n]s", name);
+    clearBuffer();
+    printf("\nAluno(s) Encontrado(s)\n");
+    printf("----------------------\n");
+    findAlunoByName(init, name);
     anyButtonToContinue();
 }
 
 void allAlunos() {
 
-    system("clear");
-    printf("Listar Todos\n");
-    printf("------------\n");
+    titleName("Listar Todos");
     printAllAluno(init);
     anyButtonToContinue();
 }
@@ -63,9 +63,7 @@ void deleteByRa() {
 
     int ra;
 
-    system("clear");
-    printf("Remover Aluno por RA\n");
-    printf("--------------------\n");
+    titleName("Remover Aluno por RA");
     printf("Qual o RA do aluno que deseja remover\n");
     printf("RA: ");
     scanf("%d", &ra);
@@ -77,9 +75,7 @@ void deleteByRa() {
 
 void deleteAllAlunos() {
 
-    system("clear");
-    printf("Deletar Lista de Alunos\n");
-    printf("-----------------------\n");
+    titleName("Deletar Lista de Alunos");
     removeAllAlunos(init);
     printf("Lista deletada com sucesso\n");
     anyButtonToContinue();

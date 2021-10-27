@@ -13,7 +13,7 @@ void menuOptions(int op) {
         allAlunos();
         break;
     case 4:
-        printf("1 - Fernanda\n");
+        findByName();
         break;
     case 5:
         deleteByRa();

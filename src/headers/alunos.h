@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct nodo {
 
@@ -11,7 +12,7 @@ typedef struct nodo {
 
 listAlunos *init = NULL; // variavel que irá conter o endereço do nó inicial.
 
-void insertAluno(listAlunos *point, char namePers[40], int raPers) {
+void insertAluno(listAlunos *point, char namePers[], int raPers) {
 
     listAlunos *aux;
     aux = ( listAlunos * ) malloc(sizeof(listAlunos)); // aloca dinamicamente um novo nó
@@ -50,6 +51,23 @@ listAlunos * findAlunoByRa(listAlunos * point, int ra) {
     }
 
     return NULL;
+}
+
+int findAlunoByName(listAlunos * point, char name[]) {
+
+    while (point != NULL) {
+        
+        if(strstr(point -> name, name) != NULL) {
+
+            printf("RA: %d\nName: %s\n\n", point -> ra, point -> name);  
+
+            point = point -> next;          
+        } else {
+            point = point -> next;
+        }
+    }
+
+    return 0;
 }
 
 void printAllAluno(listAlunos * point) {
