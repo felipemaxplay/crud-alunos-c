@@ -29,11 +29,18 @@ void findByRa() {
     printf("RA: ");
     scanf("%d", &ra);
     clearBuffer();
-    printf("\nAluno Encontrado\n");
-    printf("-----------------\n");
-    aluno = findAlunoByRa(init, ra);
-    printf("RA: %d\n", aluno -> ra);
-    printf("Nome: %s\n", aluno -> name);
+
+    if(findAlunoByRa(init, ra) != NULL) {
+        
+        printf("\nAluno(a) Encontrado(a)\n");
+        printf("----------------------\n");
+        aluno = findAlunoByRa(init, ra);
+        printf("RA: %d\n", aluno -> ra);
+        printf("Nome: %s\n", aluno -> name);
+    } else {
+
+        printf("\nAluno(a) com o RA %d não foi encontrado(a)\n", ra);
+    }
     anyButtonToContinue();
 }
 
