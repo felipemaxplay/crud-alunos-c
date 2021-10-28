@@ -1,34 +1,35 @@
 #include <stdio.h>
+#include "./alunosService.h"
 
 void menuOptions(int op) {
     switch (op) {
     case 1:
-        printf("Cadastro completo\n");
+        newAluno();
         break;
     case 2:
-        printf("RA: 21 - Matheus\n");
+        findByRa();
         break;
     case 3:
-        printf("1 - Jean\n2 - Maicon\n3 - Jean\n");
+        allAlunos();
         break;
     case 4:
-        printf("1 - Fernanda\n");
+        findByName();
         break;
     case 5:
-        printf("Aluno Deletado\n");
+        deleteByRa();
         break;
     case 6:
-        printf("Lista deletada\n");
+        deleteAllAlunos();
         break;
     case 7:
-        printf("1 - Ana\n2 - Maicon\n");
+        findBigAndSmall();
         break;
     case 0:
         printf("Saindo\n");
         break;
     
     default:
-    printf("Operação invalida. Por favor tente novamente.\n");
+    printf("Operação invalida. Por favor tente novamente.\n\n");
         break;
     }
 }

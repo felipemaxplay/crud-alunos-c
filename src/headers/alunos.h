@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct nodo {
 
@@ -11,7 +12,7 @@ typedef struct nodo {
 
 listAlunos *init = NULL; // variavel que irá conter o endereço do nó inicial.
 
-void insertAluno(listAlunos *point, char namePers[40], int raPers) {
+void insertAluno(listAlunos *point, char namePers[], int raPers) {
 
     listAlunos *aux;
     aux = ( listAlunos * ) malloc(sizeof(listAlunos)); // aloca dinamicamente um novo nó
@@ -37,7 +38,7 @@ void insertAluno(listAlunos *point, char namePers[40], int raPers) {
     }   
 }
 
-listAlunos * findAlunoByRa(listAlunos *point, int ra) {
+listAlunos * findAlunoByRa(listAlunos * point, int ra) {
 
     while (point != NULL) {
         
@@ -45,11 +46,28 @@ listAlunos * findAlunoByRa(listAlunos *point, int ra) {
             
             return point;
         } else {
-            point -> next;
+            point = point -> next;
         }
     }
 
     return NULL;
+}
+
+int findAlunoByName(listAlunos * point, char name[]) {
+
+    while (point != NULL) {
+        
+        if(strstr(point -> name, name) != NULL) {
+
+            printf("RA: %d\nName: %s\n\n", point -> ra, point -> name);  
+
+            point = point -> next;          
+        } else {
+            point = point -> next;
+        }
+    }
+
+    return 0;
 }
 
 void printAllAluno(listAlunos * point) {
@@ -57,7 +75,7 @@ void printAllAluno(listAlunos * point) {
     listAlunos * pre;
     while(point != NULL) {
 
-        printf("\nRA: %d\nName: %s\n", point -> ra, point -> name);
+        printf("RA: %d\nName: %s\n\n", point -> ra, point -> name);
         pre = point;
         point = point -> next;
     }
@@ -104,4 +122,49 @@ void removeAllAlunos(listAlunos * point) {
         free(point);
         point = init;
     }
+}
+
+void findBiggerAndSmallName(listAlunos * point) {
+
+    int big, small, aux = 0;
+    listAlunos * maior;
+    listAlunos * menor;
+
+    printf("valor de aux: %d\n", aux);
+
+    while(point != NULL) {
+
+        if(aux == 0) {
+
+            aux = strlen(point -> name);
+            big = aux;
+            small = aux;
+
+        } else {
+
+            aux = strlen(point -> name);
+        }
+
+        if(big <= aux) {
+
+            big = aux;
+
+            maior = point;
+
+        }
+
+        if(small >= aux) {
+
+            small = aux;
+
+            menor = point;
+
+        }
+
+        point = point -> next;
+    }
+    
+    printf("Maior nome: %s\n", maior -> name);
+    printf("Menor nome: %s\n\n", menor -> name);
+
 }
