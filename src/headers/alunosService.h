@@ -80,3 +80,10 @@ void deleteAllAlunos() {
     printf("Lista deletada com sucesso\n");
     anyButtonToContinue();
 }
+
+void findBigAndSmall() {
+
+    titleName("Maior e Menor Nome da Lista");
+    findBiggerAndSmallName(init);
+    anyButtonToContinue();
+}

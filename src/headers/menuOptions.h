@@ -22,14 +22,14 @@ void menuOptions(int op) {
         deleteAllAlunos();
         break;
     case 7:
-        printf("1 - Ana\n2 - Maicon\n");
+        findBigAndSmall();
         break;
     case 0:
         printf("Saindo\n");
         break;
     
     default:
-    printf("Operação invalida. Por favor tente novamente.\n");
+    printf("Operação invalida. Por favor tente novamente.\n\n");
         break;
     }
 }

@@ -123,3 +123,48 @@ void removeAllAlunos(listAlunos * point) {
         point = init;
     }
 }
+
+void findBiggerAndSmallName(listAlunos * point) {
+
+    int big, small, aux = 0;
+    listAlunos * maior;
+    listAlunos * menor;
+
+    printf("valor de aux: %d\n", aux);
+
+    while(point != NULL) {
+
+        if(aux == 0) {
+
+            aux = strlen(point -> name);
+            big = aux;
+            small = aux;
+
+        } else {
+
+            aux = strlen(point -> name);
+        }
+
+        if(big <= aux) {
+
+            big = aux;
+
+            maior = point;
+
+        }
+
+        if(small >= aux) {
+
+            small = aux;
+
+            menor = point;
+
+        }
+
+        point = point -> next;
+    }
+    
+    printf("Maior nome: %s\n", maior -> name);
+    printf("Menor nome: %s\n\n", menor -> name);
+
+}
