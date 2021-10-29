@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include "./headers/menu.h"
 
 int main(int argc, char const *argv[]) {
 
-    // Code Here
+    menuDisplay();
+
     return 0;
 }
