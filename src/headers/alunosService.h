@@ -29,11 +29,18 @@ void findByRa() {
     printf("RA: ");
     scanf("%d", &ra);
     clearBuffer();
-    printf("\nAluno Encontrado\n");
-    printf("-----------------\n");
-    aluno = findAlunoByRa(init, ra);
-    printf("RA: %d\n", aluno -> ra);
-    printf("Nome: %s\n", aluno -> name);
+
+    if(findAlunoByRa(init, ra) != NULL) {
+        
+        printf("\nAluno(a) Encontrado(a)\n");
+        printf("----------------------\n");
+        aluno = findAlunoByRa(init, ra);
+        printf("RA: %d\n", aluno -> ra);
+        printf("Nome: %s\n", aluno -> name);
+    } else {
+
+        printf("\nAluno(a) com o RA %d não foi encontrado(a)\n", ra);
+    }
     anyButtonToContinue();
 }
 
@@ -68,8 +75,14 @@ void deleteByRa() {
     printf("RA: ");
     scanf("%d", &ra);
     clearBuffer();
-    removeByRa(init, ra);
+    if(removeByRa(init, ra) != 0) {
+
     printf("\nAluno Removido com Sucesso\n");
+    } else {
+    
+        printf("\nAluno(a) com o RA %d não foi encontrado(a)\n", ra);
+    }
+
     anyButtonToContinue();
 }
 
@@ -85,5 +98,11 @@ void findBigAndSmall() {
 
     titleName("Maior e Menor Nome da Lista");
     findBiggerAndSmallName(init);
+    anyButtonToContinue();
+}
+
+void invalidOption() {
+
+    printf("Operação invalida. Por favor tente novamente.\n");
     anyButtonToContinue();
 }

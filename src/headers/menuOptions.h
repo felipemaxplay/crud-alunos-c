@@ -25,11 +25,11 @@ void menuOptions(int op) {
         findBigAndSmall();
         break;
     case 0:
-        printf("Saindo\n");
+        printf("Saindo\n\n");
         break;
     
     default:
-    printf("Operação invalida. Por favor tente novamente.\n\n");
+        invalidOption();
         break;
     }
 }

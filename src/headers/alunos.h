@@ -53,7 +53,7 @@ listAlunos * findAlunoByRa(listAlunos * point, int ra) {
     return NULL;
 }
 
-int findAlunoByName(listAlunos * point, char name[]) {
+void findAlunoByName(listAlunos * point, char name[]) {
 
     while (point != NULL) {
         
@@ -66,8 +66,6 @@ int findAlunoByName(listAlunos * point, char name[]) {
             point = point -> next;
         }
     }
-
-    return 0;
 }
 
 void printAllAluno(listAlunos * point) {
@@ -91,7 +89,6 @@ int removeByRa(listAlunos * point, int ra) {
         
         aux = point;
         init = point -> next;
-        init -> pre = NULL;
         free(aux);
         return 1;
     } else {
@@ -127,10 +124,8 @@ void removeAllAlunos(listAlunos * point) {
 void findBiggerAndSmallName(listAlunos * point) {
 
     int big, small, aux = 0;
-    listAlunos * maior;
-    listAlunos * menor;
-
-    printf("valor de aux: %d\n", aux);
+    listAlunos * maior = NULL;
+    listAlunos * menor = NULL;
 
     while(point != NULL) {
 
@@ -164,7 +159,12 @@ void findBiggerAndSmallName(listAlunos * point) {
         point = point -> next;
     }
     
-    printf("Maior nome: %s\n", maior -> name);
-    printf("Menor nome: %s\n\n", menor -> name);
+    if(maior != NULL || menor != NULL) {
+        
+        printf("Maior nome: %s\n", maior -> name);
+        printf("Menor nome: %s\n\n", menor -> name);
+    } else {
 
+        printf("Aparentemente a lista está vazia...\n");
+    }
 }
