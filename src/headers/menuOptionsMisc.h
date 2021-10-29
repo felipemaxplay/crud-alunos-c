@@ -21,7 +21,7 @@ void clearBuffer() {
 
 void anyButtonToContinue() {
 
-    printf("\nAperte qualquer tecla para continuar...\n");
+    printf("\nAperte qualquer tecla para continuar...");
     clearBuffer();
     getchar();    
 }
