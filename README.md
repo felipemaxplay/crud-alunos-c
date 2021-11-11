@@ -15,6 +15,7 @@ Como fazer o build de acordo com o seu sistema operacional.
 
 ## Linux
 Requisitos:
+- gtkmm-3.0
 - g++
 - GNU Make
 
